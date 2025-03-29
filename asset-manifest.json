@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/women-travel-platform/static/css/main.9d3059f7.css",
-    "main.js": "/women-travel-platform/static/js/main.af06928f.js",
+    "main.js": "/women-travel-platform/static/js/main.39c17f2b.js",
     "static/js/417.a4f9544d.chunk.js": "/women-travel-platform/static/js/417.a4f9544d.chunk.js",
     "static/js/782.dc8118eb.chunk.js": "/women-travel-platform/static/js/782.dc8118eb.chunk.js",
     "static/js/25.d8ef913f.chunk.js": "/women-travel-platform/static/js/25.d8ef913f.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/915.8295ed79.chunk.js": "/women-travel-platform/static/js/915.8295ed79.chunk.js",
     "index.html": "/women-travel-platform/index.html",
     "main.9d3059f7.css.map": "/women-travel-platform/static/css/main.9d3059f7.css.map",
-    "main.af06928f.js.map": "/women-travel-platform/static/js/main.af06928f.js.map",
+    "main.39c17f2b.js.map": "/women-travel-platform/static/js/main.39c17f2b.js.map",
     "417.a4f9544d.chunk.js.map": "/women-travel-platform/static/js/417.a4f9544d.chunk.js.map",
     "782.dc8118eb.chunk.js.map": "/women-travel-platform/static/js/782.dc8118eb.chunk.js.map",
     "25.d8ef913f.chunk.js.map": "/women-travel-platform/static/js/25.d8ef913f.chunk.js.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.9d3059f7.css",
-    "static/js/main.af06928f.js"
+    "static/js/main.39c17f2b.js"
   ]
 }
