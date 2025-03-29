@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "WomenTravel",
+  "name": "Women Travel Platform",
+  "description": "Туристическая платформа для женщин с турами, советами и многим другим",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,25 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ff6b81",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "lang": "ru-RU",
+  "categories": ["travel", "lifestyle", "tourism"],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Главная страница Women Travel Platform"
+    },
+    {
+      "src": "/screenshots/mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Women Travel Platform на мобильных устройствах"
+    }
+  ]
 }
