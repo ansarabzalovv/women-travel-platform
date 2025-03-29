@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Офлайн режим | Women Travel Platform</title>
+  <style>
+    body {
+      font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .container {
+      padding: 30px;
+      max-width: 600px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #ff6b81;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    
+    .button {
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    
+    .button:hover {
+      background-color: #ff4757;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+    
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      color: #ff6b81;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📶</div>
+    <h1>Нет соединения</h1>
+    <h2>Вы сейчас в офлайн режиме</h2>
+    <p>
+      К сожалению, у вас нет подключения к интернету. Проверьте свое соединение и попробуйте снова.
+      Мы сохранили часть контента, который вы просматривали ранее, но для полноценной работы необходимо интернет-соединение.
+    </p>
+    <button class="button" onclick="window.location.reload()">
+      Попробовать снова
+    </button>
+  </div>
+
+  <script>
+    // Проверка подключения к интернету
+    window.addEventListener('online', function() {
+      window.location.reload();
+    });
+    
+    document.querySelector('.button').addEventListener('click', function() {
+      if (navigator.onLine) {
+        window.location.href = '/';
+      } else {
+        window.location.reload();
+      }
+    });
+  </script>
+</body>
+</html> 
