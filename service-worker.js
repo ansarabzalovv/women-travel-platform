@@ -8,14 +8,17 @@ const CACHE_NAME = 'women-travel-static-v1';
 const API_CACHE_NAME = 'women-travel-api-v1';
 const IMAGE_CACHE_NAME = 'women-travel-images-v1';
 
+// Базовый путь для GitHub Pages
+const BASE_PATH = '/women-travel-platform';
+
 // Ресурсы для предварительного кэширования
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/static/js/main.js',
-  '/static/css/main.css',
-  '/manifest.json',
-  '/favicon.ico',
+  BASE_PATH + '/',
+  BASE_PATH + '/index.html',
+  BASE_PATH + '/static/js/main.js',
+  BASE_PATH + '/static/css/main.css',
+  BASE_PATH + '/manifest.json',
+  BASE_PATH + '/favicon.ico',
   // Добавьте другие статические ресурсы
 ];
 
@@ -55,14 +58,22 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
+  // Пропускаем запросы к другим доменам
+  if (!url.origin.includes(self.location.origin)) {
+    return;
+  }
+
+  // Удаляем базовый путь для правильного сопоставления
+  const pathname = url.pathname.replace(BASE_PATH, '');
+
   // Стратегия для изображений: Cache First, затем сеть
-  if (request.destination === 'image' || url.pathname.endsWith('.jpg') || url.pathname.endsWith('.png') || url.pathname.endsWith('.webp')) {
+  if (request.destination === 'image' || pathname.endsWith('.jpg') || pathname.endsWith('.png') || pathname.endsWith('.webp')) {
     event.respondWith(handleImageRequest(request));
     return;
   }
 
   // Стратегия для API-запросов: Network First, затем кэш
-  if (url.pathname.includes('/api/')) {
+  if (pathname.includes('/api/')) {
     event.respondWith(handleApiRequest(request));
     return;
   }
@@ -157,7 +168,7 @@ async function handleStaticRequest(request) {
     
     // Если запрос на HTML-страницу, возвращаем оффлайн-страницу
     if (request.destination === 'document') {
-      return caches.match('/offline.html');
+      return caches.match(BASE_PATH + '/offline.html');
     }
     
     // Для других ресурсов возвращаем ошибку
